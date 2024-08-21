@@ -14,6 +14,7 @@ A full stack dApp starter for minting NFTs built on Ethereum (Solidity) with Nex
     - [Testing Contracts](#testing-contracts)
     - [Running the frontend](#running-the-frontend)
 
+
 ## Deployed Website url
 
 https://eternal-nft.vercel.app/
