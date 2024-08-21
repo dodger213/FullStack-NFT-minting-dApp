@@ -8,6 +8,7 @@ This repo contains boilerplate code for minting NFTs from the client-side using 
 
 ## Prerequisites
 
+
 - [Node.js](https://nodejs.org/en/download/)
 - [MetaMask wallet browser extension](https://metamask.io/download.html).
 
