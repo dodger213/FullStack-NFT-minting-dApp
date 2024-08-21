@@ -4,7 +4,7 @@ A full stack dApp starter for minting NFTs built on Ethereum (Solidity) with Nex
 
 This repo contains boilerplate code for minting NFTs from the client-side using [Solidity](https://soliditylang.org/), [React](https://reactjs.org/) and [TailwindCSS](https://tailwindcss.com/).
 
-![FullStack-NFT-minting-dApp](/public/screenshot.png)
+![FullStack-NFT-minting-dApp](/frontend/public/screenshot.png)
 
 ## Prerequisites
 
@@ -83,7 +83,7 @@ All state is retained on browser refresh.
 
 ## Editing The Front-End
 
-To modify the front page of your application, edit `pages/index.js`.
+To modify the front page of your application, edit `app/page.js`.
 
 All [TailwindCSS classes](https://tailwindcss.com/docs) are available to you.
 
