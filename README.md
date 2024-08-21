@@ -2,110 +2,135 @@
 
 A full stack dApp starter for minting NFTs built on Ethereum (Solidity) with Next.js (React).
 
-This repo contains boilerplate code for minting NFTs from the client-side using [Solidity](https://soliditylang.org/), [React](https://reactjs.org/) and [TailwindCSS](https://tailwindcss.com/).
+## Table of Contents
+  - [Deployed Website url](#deployed-website-url)
+  - [Deployed Contract Address](#deployed-contract-address)
+  - [Project Description](#project-description)
+  - [Workflow](#workflow)
+  - [Directory structure](#directory-structure)
+  - [Clone, Install and Build steps](#clone-install-and-build-steps)
+    - [Prerequisites](#prerequisites)
+    - [Cloning and installing dependencies](#cloning-and-installing-dependencies)
+    - [Testing Contracts](#testing-contracts)
+    - [Running the frontend](#running-the-frontend)
 
-![FullStack-NFT-minting-dApp](/public/screenshot.png)
+## Deployed Website url
 
-## Prerequisites
+https://eternal-nft.vercel.app/
 
-- [Node.js](https://nodejs.org/en/download/)
-- [MetaMask wallet browser extension](https://metamask.io/download.html).
+## Deployed Contract Address
 
-## Getting Started
+0x9b6dd9b898c300037c8C245e8E619a0934158065
 
-### Clone This Repo
+## Project Description
 
-Use `git clone https://github.com/dodger213/FullStack-NFT-minting-dApp.git` to get the files within this repository onto your local machine.
+A dapp to mint your own text-based **Eternal Character NFT**.
 
-### Environment Setup
+**Eternal Characters** are the residents of **Eternal Domain world**. They consist of 3 main characteristics, Area of Control, Weapon and Rank.
 
-Duplicate `.env.example` to `.env` and fill out the `HARDHAT_CHAIN_ID` environment variable. The port from the example file, if it's free, will be fine in most cases.
+**Area of Control -** Fire, Wind, Wave, Earth, Light, Shadow, Thunder, Space, Time, Gravity, Ice
+**Weapon -** Sword, Spear, Shield, Hammer, Saber, Axe, Bow, Staff, Wand, Fist, Dagger, Scythe, Mace, Blade, Katana
+**Rank -** Lord, King, Emperor, Venerable, Ancestor, Saint, God
 
-Run `npm install`.
+## Workflow
 
-### Running The Smart Contract Locally
+1. Enter the dApp and connect the wallet to rinkeby network.
+2. Click on the Mint Character button.
+3. Metamask pops up and asks to confirm the transaction.
+4. After the transaction is successfully processed the user can see the minted character.
+5. The minted character is also added to My NFT page under Minted Characters section.
 
-Compile the ABI for the smart contract using `npx hardhat compile`.
-
-If you're successful, you'll recieve a confirmation message of:
-
-```
-Compilation finished successfully
-```
-
-And, a `src/artifacts` folder will be created in your project.
-
-Deploy the smart contract to the local blockchain for testing with `npx hardhat node`.
-
-If you're successful, you'll be presented with a number of account details in the CLI. Here's an example:
-
-```
-Account #0: 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 (10000 ETH)
-Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
-```
-
-Then in a new terminal window, `npx hardhat run scripts/deploy.js --network localhost`.
-
-If you're successful, you'll get something like the following CLI output:
+## Directory structure
 
 ```
-Minter deployed to: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+EternalNFT
+┣ client
+┃ ┣ pages
+┃ ┃ ┣ api
+┃ ┃ ┃ ┗ hello.js
+┃ ┃ ┣ \_app.js
+┃ ┃ ┗ index.js
+┃ ┣ public
+┃ ┃ ┣ favicon.ico
+┃ ┃ ┗ vercel.svg
+┃ ┣ styles
+┃ ┃ ┗ globals.css
+┃ ┣ utils
+┃ ┃ ┗ EternalNFT.json
+┃ ┣ .gitignore
+┃ ┣ README.md
+┃ ┣ config.js
+┃ ┣ package-lock.json
+┃ ┣ package.json
+┃ ┣ postcss.config.js
+┃ ┗ tailwind.config.js
+┣ contracts
+┃ ┣ libraries
+┃ ┃ ┗ Base64.sol
+┃ ┗ EternalNFT.sol
+┣ scripts
+┃ ┗ deploy.js
+┣ test
+┃ ┗ eternalTest.js
+┣ .gitignore
+┣ README.md
+┣ hardhat.config.js
+┣ package-lock.json
+┗ package.json
 ```
 
-### Adding A Local Account To MetaMask
+## Clone, Install and Build steps
 
-Open your MetaMask browser extension and change the network to `Localhost 8545`.
+### Prerequisites
 
-Next, import one of the accounts by adding its Private Key (for example, `0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80` to MetaMask.
+1. [Git](https://git-scm.com/)
+2. [Node JS](https://nodejs.org/en/) (everything was installed and tested under v15.12.0)
+3. A Browser with the [MetaMask extension](https://metamask.io/) installed.
+4. Test Ether on the Rinkeby network.
 
-If you're successful, you should see the a balance resembling something like `10000 ETH` in the wallet.
+<br>
 
-### Connecting The Front-End
+### Cloning and installing dependencies
 
-In `.env` set the `NEXT_PUBLIC_MINTER_ADDRESS` environment variable to the address your smart contract was deployed to. For example, `0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0`.
+1. Clone the project repository on your local machine
 
-In a new terminal window, load the front-end with `npm run dev`. If you want to use an alternate port from `3000`, use `npm run dev -- --port=1234`, or whatever port number you prefer.
+```
+ git clone https://github.com/dodger213/FullStack-NFT-minting-dApp.git
+ cd FullStack-NFT-minting-dApp
+```
 
-## Demo'ing The Functionality
+2. Installing dependencies
 
-Once set up, go to `localhost:3000` (or whatever post number you used), to view your dApp in the browser.
+- For contracts -
+  ```
+  npm install
+  ```
+- For client -
+  ```
+  cd client
+  npm install
+  ```
 
-First, connect your wallet by clicking `Connect wallet`. Ensure you're connected to the `Localhost 8454` network in your MetaMask extension. Select the wallet that you imported earlier.
+### Testing Contracts
 
-You can now test minting tokens, between 1 and 10 per transaction, by filling out the input with your desired amount and clicking the `Mint` button.
+For testing contracts run command:
 
-If you successfully mint a number of NFTs, you should see the `Tokens minted` amount increment.
+```
+npx hardhat test
+```
 
-Switching accounts in MetaMask will update the wallet address in the top right hand corner. Disconnecting all accounts will prompt you to connect your wallet.
+### Running the frontend
 
-All state is retained on browser refresh.
+For running frontend locally run command:
 
-## Editing The Front-End
+```
+cd client
+npm run dev
+```
 
-To modify the front page of your application, edit `pages/index.js`.
+### Environment variables (not needed for running project locally)
 
-All [TailwindCSS classes](https://tailwindcss.com/docs) are available to you.
-
-To lint your front-end code, use `npm run lint`.
-
-## Testing
-
-To test the smart contract, run `npx hardhat test`.
-
-Basic tests can be found in `test/Minter.test.js`.
-
-## Roadmap
-
-- Show the funds available in the connected account's wallet
-- Add common owner functionality to the contract
-    - Reserve tokens
-    - Flip sale state
-    - Set starting index
-    - Set base URI for asset metadata
-    - Set provenance hash
-    - Withdraw funds
-- Attach image data to minted tokens with IPFS
-- Deploy to the Ropsten test network
-- Introduce code style rules and linting
-- Write more extensive tests
-- Create a TypeScript fork
+```
+ALCHEMY_RINKEBY_URL =
+ACCOUNT_KEY =
+```
