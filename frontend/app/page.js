@@ -15,7 +15,7 @@ function Home() {
   const [currentAccount, setCurrentAccount] = useState('');
   const [isCorrectNetwork, setIsCorrectNetwork] = useState(false);
 
-  const sepoliaChainId = "0x10b6b99";
+  const sepoliaChainId = "0xaa36a7";
   const devChainId = 1337
   const localhostChainId = `0x${Number(devChainId).toString(16)}`
 
@@ -76,35 +76,64 @@ function Home() {
   }, [])
 
   //Creates transaction to mint NFT on clicking Mint Character button
+  // const mintCharacter = async () => {
+  //   try {
+  //     const { ethereum } = window;
+  //     if (ethereum) {
+  //       const provider = new ethers.providers.Web3Provider(ethereum);
+  //       const signer = provider.getSigner();
+  //       const nftContract = new ethers.Contract(nftContractAddress, NFT.abi, signer)
+
+  //       let nftTx = await nftContract.createEternalNFT();
+  //       console.log('Mining...', nftTx.hash)
+  //       setMiningStatus(0);
+  //       let tx = await nftTx.wait();
+  //       setLoadingState(1);
+  //       console.log('Mined!', tx);
+
+  //       let event = tx.events[0];
+  //       let value = event.args[2];
+  //       let tokenId = value.toNumber();
+
+  //       console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`)
+  //       getMintedNFT(tokenId)
+  //     } else {
+  //       console.log("Ethereum object doesn't exit")
+  //     }
+  //   } catch (error) {
+  //     console.log('Error minting character', error)
+  //     setTxError(error.message)
+  //   }
+  // }
   const mintCharacter = async () => {
     try {
       const { ethereum } = window;
+      console.log("Ethereum object:", ethereum);
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
+        console.log("Provider created:", provider);
         const signer = provider.getSigner();
-        const nftContract = new ethers.Contract(nftContractAddress, NFT.abi, signer)
-
+        console.log("Signer obtained:", signer);
+        const nftContract = new ethers.Contract(nftContractAddress, NFT.abi, signer);
         let nftTx = await nftContract.createEternalNFT();
-        console.log('Mining...', nftTx.hash)
+        console.log('Mining...', nftTx.hash);
         setMiningStatus(0);
         let tx = await nftTx.wait();
         setLoadingState(1);
         console.log('Mined!', tx);
-
         let event = tx.events[0];
         let value = event.args[2];
         let tokenId = value.toNumber();
-
-        console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`)
-        getMintedNFT(tokenId)
+        console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`);
+        getMintedNFT(tokenId);
       } else {
-        console.log("Ethereum object doesn't exit")
+        console.log("Ethereum object doesn't exist");
       }
     } catch (error) {
-      console.log('Error minting character', error)
-      setTxError(error.message)
+      console.log('Error minting character', error);
+      setTxError(error.message);
     }
-  }
+  };
 
   //Gets the minted NFT data
   const getMintedNFT = async (tokenId) => {
