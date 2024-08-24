@@ -100,9 +100,6 @@ function Home() {
   //     } else {
   //       console.log("Ethereum object doesn't exit")
   //     }
-  //   } catch (error) {
-  //     console.log('Error minting character', error)
-  //     setTxError(error.message)
   //   }
   // }
   const mintCharacter = async () => {
