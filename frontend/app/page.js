@@ -95,8 +95,6 @@ function Home() {
   //       let value = event.args[2];
   //       let tokenId = value.toNumber();
 
-  //       console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`)
-  //       getMintedNFT(tokenId)
   //     }
   //   }
   // }
@@ -120,6 +118,10 @@ function Home() {
         let value = event.args[2];
         let tokenId = value.toNumber();
         console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`);
+        //       let event = tx.events[0];
+        //       let value = event.args[2];
+        //       let tokenId = value.toNumber();
+
         getMintedNFT(tokenId);
       } else {
         console.log("Ethereum object doesn't exist");
