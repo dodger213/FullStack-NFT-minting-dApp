@@ -97,8 +97,6 @@ function Home() {
 
   //       console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`)
   //       getMintedNFT(tokenId)
-  //     } else {
-  //       console.log("Ethereum object doesn't exit")
   //     }
   //   }
   // }
