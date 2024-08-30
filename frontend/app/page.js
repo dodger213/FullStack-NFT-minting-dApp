@@ -79,12 +79,6 @@ const Home = () => {
   //Creates transaction to mint NFT on clicking Mint Character button
   // const mintCharacter = async () => {
   //   try {
-  //     
-  //     if (ethereum) {
-  //       const provider = new ethers.providers.Web3Provider(ethereum);
-  //       const signer = provider.getSigner();
-  //       const nftContract = new ethers.Contract(nftContractAddress, NFT.abi, signer)
-
   //       let nftTx = await nftContract.createEternalNFT();
   //       console.log('Mining...', nftTx.hash)
   //       setMiningStatus(0);
