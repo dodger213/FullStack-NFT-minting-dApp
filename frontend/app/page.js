@@ -8,7 +8,7 @@ import { nftContractAddress } from '@/config';
 import NFT from '@/utils/EternalNFT.json'
 
 const Home = () => {
-  
+
   const [mintedNFT, setMintedNFT] = useState(null);
   const [miningStatus, setMiningStatus] = useState(null);
   const [loadingState, setLoadingState] = useState(0);
@@ -79,7 +79,7 @@ const Home = () => {
   //Creates transaction to mint NFT on clicking Mint Character button
   // const mintCharacter = async () => {
   //   try {
-  //     const { ethereum } = window;
+  //     
   //     if (ethereum) {
   //       const provider = new ethers.providers.Web3Provider(ethereum);
   //       const signer = provider.getSigner();
