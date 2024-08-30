@@ -8,8 +8,8 @@ import { nftContractAddress } from '@/config';
 import NFT from '@/utils/EternalNFT.json'
 
 const Home = () => {
+  
   const [mintedNFT, setMintedNFT] = useState(null);
-
   const [miningStatus, setMiningStatus] = useState(null);
   const [loadingState, setLoadingState] = useState(0);
   const [txError, setTxError] = useState(null);
