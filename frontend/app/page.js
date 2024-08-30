@@ -85,11 +85,6 @@ const Home = () => {
   //       let tx = await nftTx.wait();
   //       setLoadingState(1);
   //       console.log('Mined!', tx);
-
-  //       let event = tx.events[0];
-  //       let value = event.args[2];
-  //       let tokenId = value.toNumber();
-
   //     }
   //   }
   // }
