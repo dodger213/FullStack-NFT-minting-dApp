@@ -45,17 +45,16 @@ A dapp to mint your own text-based **Eternal Character NFT**.
 
 ```
 EternalNFT
-┣ client
-┃ ┣ pages
-┃ ┃ ┣ api
-┃ ┃ ┃ ┗ hello.js
-┃ ┃ ┣ \_app.js
-┃ ┃ ┗ index.js
+┣ frontend
+┃ ┣ app
+┃ ┃ ┃ favicon.ico 
+┃ ┃ ┃ globals.css
+┃ ┃ ┃ layout.js
+┃ ┃ ┗ page.js
 ┃ ┣ public
-┃ ┃ ┣ favicon.ico
+┃ ┃ ┃ next.svg
+┃ ┃ ┃ screenshot.png
 ┃ ┃ ┗ vercel.svg
-┃ ┣ styles
-┃ ┃ ┗ globals.css
 ┃ ┣ utils
 ┃ ┃ ┗ EternalNFT.json
 ┃ ┣ .gitignore
@@ -72,7 +71,7 @@ EternalNFT
 ┣ scripts
 ┃ ┗ deploy.js
 ┣ test
-┃ ┗ eternalTest.js
+┃ ┗ EternalNFT-test.js
 ┣ .gitignore
 ┣ README.md
 ┣ hardhat.config.js
