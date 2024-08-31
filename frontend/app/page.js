@@ -76,16 +76,6 @@ const Home = () => {
     checkCorrectNetwork();
   }, [])
 
-  //Creates transaction to mint NFT on clicking Mint Character button
-  // const mintCharacter = async () => {
-  //   try {
-  //       let nftTx = await nftContract.createEternalNFT();
-  //       console.log('Mining...', nftTx.hash)
-  //       setMiningStatus(0);
-  //       
-  //     }
-  //   }
-  // }
   const mintCharacter = async () => {
     try {
       const { ethereum } = window;
