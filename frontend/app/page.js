@@ -82,9 +82,7 @@ const Home = () => {
   //       let nftTx = await nftContract.createEternalNFT();
   //       console.log('Mining...', nftTx.hash)
   //       setMiningStatus(0);
-  //       let tx = await nftTx.wait();
-  //       setLoadingState(1);
-  //       console.log('Mined!', tx);
+  //       
   //     }
   //   }
   // }
