@@ -7,6 +7,7 @@ describe('EternalNFT', async () => {
   let nftContractAddress;
   let tokenId;
 
+  
   // Deploy the EternalNFT Contract before each test
   beforeEach('Setup Contract', async () => {
     const EternalNFT = await ethers.getContractFactory('EternalNFT');
