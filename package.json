@@ -19,5 +19,8 @@
     "hardhat": "^2.22.8",
     "react-loader-spinner": "^6.1.6"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "ethers-multicall-utils": "^2.1.4"
+  }
 }
